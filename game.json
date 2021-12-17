@@ -4732,250 +4732,8 @@
                 "textG": 0,
                 "textR": 0
               },
-              "comment": "Codigo para parar o elevador e coloca-lo no nível certo(Baseado no StopPoint )",
+              "comment": "Codigo para parar o elevador nos niveis e coloca-lo no nível certo(Baseado no StopPoint )",
               "comment2": ""
-            },
-            {
-              "disabled": true,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Physics2::LinearVelocityY"
-                  },
-                  "parameters": [
-                    "ElevatorBase",
-                    "Physics2",
-                    "<",
-                    "0"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "CollisionNP"
-                  },
-                  "parameters": [
-                    "ElevatorBase",
-                    "Nivel",
-                    "",
-                    "",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Distance"
-                  },
-                  "parameters": [
-                    "Nivel",
-                    "ElevatorBase",
-                    "8",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Distance"
-                  },
-                  "parameters": [
-                    "Nivel",
-                    "ElevatorBase",
-                    "10",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": [],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "BuiltinCommonInstructions::And"
-                  },
-                  "parameters": [],
-                  "subInstructions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Physics2::LinearVelocityY"
-                      },
-                      "parameters": [
-                        "ElevatorBase",
-                        "Physics2",
-                        ">",
-                        "0"
-                      ],
-                      "subInstructions": []
-                    }
-                  ]
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "BoundingBoxTop"
-                  },
-                  "parameters": [
-                    "Nivel",
-                    "<=",
-                    "ElevatorBase.BoundingBoxTop()"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "BoundingBoxTop"
-                  },
-                  "parameters": [
-                    "ElevatorBase",
-                    "=",
-                    "rou"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Physics2::LinearVelocityY"
-                  },
-                  "parameters": [
-                    "ElevatorBase",
-                    "Physics2",
-                    ">",
-                    "0"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "BoundingBoxTop"
-                  },
-                  "parameters": [
-                    "ElevatorBase",
-                    ">=",
-                    "Nivel.BoundingBoxTop()"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "VarGlobal"
-                  },
-                  "parameters": [
-                    "teste",
-                    "=",
-                    "round(ElevatorBase.BoundingBoxTop())"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "VarGlobal"
-                  },
-                  "parameters": [
-                    "teste2",
-                    "=",
-                    "round(Nivel.BoundingBoxTop())"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "PickNearest"
-                  },
-                  "parameters": [
-                    "Nivel",
-                    "ElevatorBase.BoundingBoxTop()",
-                    "ElevatorBase.BoundingBoxTop()",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "PickNearest"
-                  },
-                  "parameters": [
-                    "Nivel",
-                    "ElevatorBase.X()",
-                    "ElevatorBase.Y()",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Distance"
-                  },
-                  "parameters": [
-                    "Nivel",
-                    "ElevatorBase",
-                    "50",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Physics2::LinearVelocityY"
-                  },
-                  "parameters": [
-                    "ElevatorBase",
-                    "Physics2",
-                    "=",
-                    "0"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ModVarGlobal"
-                  },
-                  "parameters": [
-                    "teste1",
-                    "=",
-                    "round(Nivel.BoundingBoxTop())"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ModVarGlobal"
-                  },
-                  "parameters": [
-                    "teste0",
-                    "=",
-                    "round(ElevatorBase.BoundingBoxTop())"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
             },
             {
               "disabled": false,
@@ -5019,76 +4777,108 @@
                   "conditions": [
                     {
                       "type": {
-                        "inverted": false,
-                        "value": "BuiltinCommonInstructions::Or"
+                        "inverted": true,
+                        "value": "KeyPressed"
                       },
-                      "parameters": [],
-                      "subInstructions": [
+                      "parameters": [
+                        "",
+                        "q"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "e"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
                         {
                           "type": {
                             "inverted": false,
-                            "value": "Egal"
+                            "value": "BuiltinCommonInstructions::Or"
+                          },
+                          "parameters": [],
+                          "subInstructions": [
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "Egal"
+                              },
+                              "parameters": [
+                                "GlobalVariable(derpuracao)",
+                                "=",
+                                "1"
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "Egal"
+                              },
+                              "parameters": [
+                                "GlobalVariable(derpuracao)",
+                                "=",
+                                "0"
+                              ],
+                              "subInstructions": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": [],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Physics2::LinearVelocityY"
                           },
                           "parameters": [
-                            "GlobalVariable(derpuracao)",
+                            "ElevatorBase",
+                            "Physics2",
                             "=",
-                            "1"
+                            "0"
                           ],
                           "subInstructions": []
                         },
                         {
                           "type": {
                             "inverted": false,
-                            "value": "Egal"
+                            "value": "MettreXY"
                           },
                           "parameters": [
-                            "GlobalVariable(derpuracao)",
+                            "ElevatorBase",
                             "=",
-                            "0"
+                            "Nivel.X()",
+                            "=",
+                            "Nivel.Y()"
                           ],
                           "subInstructions": []
                         }
-                      ]
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "BuiltinCommonInstructions::Once"
-                      },
-                      "parameters": [],
-                      "subInstructions": []
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Physics2::LinearVelocityY"
-                      },
-                      "parameters": [
-                        "ElevatorBase",
-                        "Physics2",
-                        "=",
-                        "0"
                       ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "MettreXY"
-                      },
-                      "parameters": [
-                        "ElevatorBase",
-                        "=",
-                        "Nivel.X()",
-                        "=",
-                        "Nivel.Y()"
-                      ],
-                      "subInstructions": []
+                      "events": []
                     }
-                  ],
-                  "events": []
+                  ]
                 }
               ]
             }
