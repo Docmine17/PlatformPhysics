@@ -1,5 +1,5 @@
 # PlatformPhysics
-A platform game made in Gdevelop all made using Physics 2.0
+Um jogo de plataforma feito no Gdevelop, todo usando usando Physics 2.0
 
 + Objetivos:
 
